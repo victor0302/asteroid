@@ -45,5 +45,3 @@ class Player (CircleShape):
     def draw(self, screen):
             pygame.draw.polygon(screen,"red", self.triangle(),LINE_WIDTH)
 
-    def update(self,dt):
-        pass
