@@ -1,6 +1,6 @@
 from circleshape import CircleShape
 from constants import PLAYER_RADIUS
-from constants import LINE_WIDTH, PLAYER_TURN_SPEED, PLAYER_SPEED,PLAYER_RADIUS,PLAYER_SHOOT_SPEED
+from constants import LINE_WIDTH, PLAYER_TURN_SPEED, PLAYER_SPEED,PLAYER_RADIUS,PLAYER_SHOOT_SPEED, PLAYER_SHOT_COOLDOWN_SECONDS
 from shot import Shot
 import pygame
 
@@ -30,11 +30,10 @@ class Player (CircleShape):
         
     def shoot(self):
         if self.shotTimer > 0:
-            break
-        else:
-            self.shotTimer = PLAYER_SHOT_COOLDOWN_SECONDS
-            shot = Shot(self.position.x, self.position.y)
-            shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
+            return
+        self.shotTimer = PLAYER_SHOT_COOLDOWN_SECONDS
+        shot = Shot(self.position.x, self.position.y)
+        shot.velocity = pygame.Vector2(0, 1).rotate(self.rotation) * PLAYER_SHOOT_SPEED
 
 
 
