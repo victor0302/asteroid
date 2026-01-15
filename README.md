@@ -22,3 +22,17 @@ A Python implementation of the classic arcade game *Asteroids*, built using the 
     git clone <repository-url>
     cd asteroid-game
     ```
+
+2.  **Install dependencies:**
+    This project uses `uv` for dependency management, but you can also use standard `pip`.
+
+    * **Using `uv` (Recommended):**
+        ```bash
+        uv sync
+        ```
+
+    * **Using `pip`:**
+        ```bash
+        pip install pygame==2.6.1
+        ```
+
